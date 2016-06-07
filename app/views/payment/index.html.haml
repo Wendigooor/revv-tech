@@ -1,0 +1,58 @@
+%script{:src => "https://js.stripe.com/v2/", :type => "text/javascript"}
+:javascript
+	Stripe.setPublishableKey('#{ENV['stripe_publishable_key']}');
+
+= javascript_include_tag 'payment'
+%section.container
+	.row
+		.col-md-10.col-md-offset-1
+			%header
+				%h2 Your Order
+				%hr
+			
+			.col-md-2
+				QTY: 1
+			.col-md-3
+				%p=@product.name 
+			.col-md-5
+				%p=@product.description
+			.col-md-2
+				.pull-right
+					%p=@product.price
+			.col-md-12
+				.total.pull-right
+					%b Total: $#{@product.price}
+			%hr
+	.row
+		.form-horizontal
+			= form_tag payment_path, :method => :post, id: "payment-form" do
+				.col-md-10.col-md-offset-1
+					%h2 Payment Information
+					%hr
+				.col-md-11.col-md-offset-1
+					%fieldset.credit_card
+						.form-group
+							%label.control-label.col-md-2(for="email") Email
+							.col-md-6
+								%input.form-control#credit-card-number(type="email")
+					%fieldset.credit_card
+
+						.form-group
+							%label.control-label.col-md-2(for="credit-card-number") Credit Card Number
+							.col-md-6
+								%input.form-control#credit-card-number(type="text" data-stripe="number" maxlength="16")
+								.payment-errors
+						.form-group
+							%label.control-label.col-md-2(for="security-code") Security Code
+							.col-md-6
+								%input.form-control#security-code(type="text" data-stripe="cvc")
+						.form-group
+							%label.control-label.col-md-2 Expiration
+							.col-md-3
+								= select_month(Date.today, {add_month_numbers: true},  class: 'form-control', data: {stripe: "exp-month"})
+							.col-md-2
+								= select_year(Date.today.year, {start_year: Date.today.year, end_year: Date.today.year + 4}, class: 'form-control', data: {stripe: "exp-year"})
+
+					%fieldset.actions.control-group.col-md-offset-2
+						.controls
+							%input(type="submit" value="Charge" class="btn btn-default")

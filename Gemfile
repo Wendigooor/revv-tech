@@ -12,9 +12,11 @@ group :development, :test do
   gem 'spring'
 end
 gem 'bootstrap-sass'
-gem 'haml-rails'
+gem "twitter-bootstrap-rails"
 gem 'high_voltage'
 gem 'pg'
+gem "haml-rails"
+gem "figaro"
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

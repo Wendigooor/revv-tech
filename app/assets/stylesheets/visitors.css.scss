@@ -1,0 +1,25 @@
+.hero-unit {
+	background-color: #eee;
+	padding: 60px;
+	margin-top: 40px;
+}
+
+.products {
+	.product {
+		margin-top: 20px;
+		padding: 10px;
+
+		.title {
+			font-size: 18px;
+			margin-top: 5px;
+		}
+
+		.description {
+			margin-top: 10px;	
+		}
+
+		.pay-button {
+			margin-top: 40px;
+		}
+	}
+}
