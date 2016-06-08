@@ -6,11 +6,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
 gem 'bootstrap-sass'
 gem "twitter-bootstrap-rails"
 gem 'high_voltage'
@@ -22,6 +24,7 @@ gem 'devise'
 gem 'stripe'
 gem 'delayed_job_active_record'
 gem 'postmark-rails', '~> 0.12.0'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
@@ -36,14 +39,17 @@ group :development do
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
+
 group :production do
   gem 'rails_12factor'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

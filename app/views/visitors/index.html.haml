@@ -5,7 +5,7 @@
 				%h1 Hello, Revv Team!
 				%p
 					- if current_user
-						= link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large'
+						= link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large btn-disabled'
 					- else
 						= link_to "Stripe Connect", user_stripe_connect_omniauth_authorize_path, :class => 'btn btn-primary btn-large stripe-connect'
 					= link_to "Add/Update Products", products_path, :class => 'btn btn-primary btn-large'
