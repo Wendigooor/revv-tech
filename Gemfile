@@ -17,6 +17,9 @@ gem 'high_voltage'
 gem 'pg'
 gem "haml-rails"
 gem "figaro"
+gem 'omniauth-stripe-connect'
+gem 'devise'
+gem 'stripe'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

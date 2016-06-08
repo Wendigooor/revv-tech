@@ -3,23 +3,28 @@
 		.col-md-12
 			.hero-unit.text-center
 				%h1 Hello, Revv Team!
-				%p Connect your Stripe accounts or add products
+				%p Connect your Stripe account or add products
 				%p
-					%a.btn.btn-primary.btn-large Connect Stripe
-					
+					- if current_user
+						= link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large'
+					- else
+						= link_to "Stripe Connect", user_stripe_connect_omniauth_authorize_path, :class => 'btn btn-primary btn-large stripe-connect'
 					= link_to "Modify Products", products_path, :class => 'btn btn-primary btn-large'
 
 	.row
 		.col-md-12
 			.products
-				- @products.each do |product|
-					.col-md-4
-						.product
-							%img{:src => "http://placehold.it/350x150"}
-							.title
-								%b.pull-right=product.price
-								%b=product.name
-							
-							%p.description=product.description
-							.pay-button.text-center
-								= link_to "Purchase", payment_path(product: product), :class => 'btn btn-primary btn-large'
+				- if current_user
+					- @products.each do |product|
+						.col-md-4
+							.product
+								%img{:src => "http://placehold.it/350x150"}
+								.title
+									%b.pull-right=product.price
+									%b=product.name
+								
+								%p.description=product.description
+								.pay-button.text-center
+									= link_to "Purchase", payment_path(product: product), :class => 'btn btn-primary btn-large'
+				- else
+					%p You must connect your Stripe account before you can see products.
