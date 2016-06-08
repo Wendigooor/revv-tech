@@ -20,6 +20,8 @@ gem "figaro"
 gem 'omniauth-stripe-connect'
 gem 'devise'
 gem 'stripe'
+gem 'delayed_job_active_record'
+gem 'postmark-rails', '~> 0.12.0'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
