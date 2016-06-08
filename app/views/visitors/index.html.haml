@@ -3,14 +3,13 @@
 		.col-md-12
 			.hero-unit.text-center
 				%h1 Hello, Revv Team!
-				%p Connect your Stripe account or add products
 				%p
 					- if current_user
 						= link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large'
 					- else
 						= link_to "Stripe Connect", user_stripe_connect_omniauth_authorize_path, :class => 'btn btn-primary btn-large stripe-connect'
-						%p You must connect your Stripe account before you can purchase any products.
 					= link_to "Add/Update Products", products_path, :class => 'btn btn-primary btn-large'
+					%small You must connect your Stripe account before you can purchase any products.
 
 	.row
 		.col-md-12
