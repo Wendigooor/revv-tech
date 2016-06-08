@@ -27,12 +27,4 @@ class PaymentController < ApplicationController
   		redirect_to(:back)
   	end
   end
-
-  def thank_you
-    #Send to action mailer with login for parent stripe account.
-    #Attach link to charge.
-    @charge = params[:charge]
-    @product = Product.find(params[:product_id])
-
-  end
 end

@@ -3,14 +3,15 @@
 # describe OmniauthCallbacksController do
  
 #   before do
-#     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:stripe]
+#     request.env["devise.mapping"] = Devise.mappings[:user] # If using Devise
+#     request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:stripe]
 #   end
  
 #   describe "#stripe_connect" do
     
-#     it "should successfully create or sign in a user" do
+#     it "should successfully create a user" do
 #       expect {
-#         click_link 'Stripe Connect'
+#         post :stripe_connect, provider: :stripe_connect
 #       }.to change{ User.count }.by(1)
 #     end
 #   end

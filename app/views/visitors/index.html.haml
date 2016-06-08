@@ -20,7 +20,7 @@
 							.product
 								%img{:src => "http://placehold.it/350x150"}
 								.title
-									%b.pull-right=product.price
+									%b.pull-right=number_with_precision(product.price, precision: 2)
 									%b=product.name
 								
 								%p.description=product.description
