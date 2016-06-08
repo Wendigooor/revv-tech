@@ -9,7 +9,8 @@
 						= link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large'
 					- else
 						= link_to "Stripe Connect", user_stripe_connect_omniauth_authorize_path, :class => 'btn btn-primary btn-large stripe-connect'
-					= link_to "Modify Products", products_path, :class => 'btn btn-primary btn-large'
+						%p You must connect your Stripe account before you can purchase any products.
+					= link_to "Add/Update Products", products_path, :class => 'btn btn-primary btn-large'
 
 	.row
 		.col-md-12
@@ -26,5 +27,3 @@
 								%p.description=product.description
 								.pay-button.text-center
 									= link_to "Purchase", payment_path(product: product), :class => 'btn btn-primary btn-large'
-				- else
-					%p You must connect your Stripe account before you can see products.
