@@ -1,0 +1,6 @@
+- if current_user 
+	%li.links
+		= link_to "Products", edit_user_registration_path
+- else
+	%li.links
+		= link_to "Connect", new_user_session_path

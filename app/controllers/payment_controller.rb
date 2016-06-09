@@ -4,12 +4,14 @@ class PaymentController < ApplicationController
       redirect_to root_path
     else 
       @product = Product.find(params[:product])
-      @user = current_user
+      @amount = params[:amount]
+      @user = @product.user
     end
   end
 
   def charge
-  	user = current_user
+    product = Product.find(params[:product_id])
+  	user = product.user
 
   	result = user.charge_account(
   		params[:stripeToken],
@@ -19,7 +21,6 @@ class PaymentController < ApplicationController
   	if result[:response] == 200
       charge = result[:charge]
       email = params[:email]
-      product = Product.find(params[:product_id])
       SendEmailJob.set(wait: 10.seconds).perform_later(email, charge.id, product)
   		render 'payment/thank_you'
   	else

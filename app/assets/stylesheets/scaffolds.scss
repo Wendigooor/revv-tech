@@ -6,6 +6,29 @@ body {
   line-height: 18px;
 }
 
+.navbar {
+  margin-bottom: 0px;
+  padding: 10px;
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
+
+  ul {
+    float: right;
+    padding: 40px;
+    li.links {
+      a {
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.profile {
+  padding: 60px;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;

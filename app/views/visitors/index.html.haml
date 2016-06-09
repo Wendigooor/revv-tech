@@ -1,28 +1,82 @@
-.container
-	.row
-		.col-md-12
-			.hero-unit.text-center
-				%h1 Hello, Revv Team!
-				%p
-					- if current_user
-						= link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large btn-disabled'
-					- else
-						= link_to "Stripe Connect", user_stripe_connect_omniauth_authorize_path, :class => 'btn btn-primary btn-large stripe-connect'
-					= link_to "Add/Update Products", products_path, :class => 'btn btn-primary btn-large'
-				%small You must connect your Stripe account before you can purchase any products.
+%section.landing-section
+	.cover
+		.wrapper
+			.container
+				.row
+					.col-md-5
+						%h2.title Revv Technical Challenge
+					.col-md-5.content
+						%h2 ONE-CLICK PAYMENTS TO POWER YOUR CAUSE.
+						= link_to "Donate", "#products", :class => 'btn btn-default btn-clear btn-large scroll-button'
+						= link_to "The Challenge", "#challenge", :class => 'btn btn-default btn-clear btn-large scroll-button'
 
-	.row
-		.col-md-12
-			.products
-				- if current_user
-					- @products.each do |product|
-						.col-md-4
-							.product
-								%img{:src => "http://placehold.it/350x150"}
-								.title
-									%b.pull-right=number_with_precision(product.price, precision: 2)
-									%b=product.name
+%section.about-section{id: 'challenge'}
+	.container
+		.row
+			.col-md-12
+				%h2 The Challenge
+				%hr
+				.col-md-10.col-md-offset-1
+					.text-center
+						.col-md-8.col-md-offset-2
+							- if current_user
+								%p Add, View or Modify products
+								= link_to "Products", products_path, :class => 'btn btn-primary btn-large'
+							- else
+								%p Sign in to use Stripe Connect or add products 
+								= link_to "Sign in", new_user_session_path, :class => 'btn btn-primary btn-large'
+
+%section.product-section{id: 'products'}
+	.container
+		.row
+			.col-md-12
+				%h2 Donation Campaigns
+				%hr
+				.products
+					- if current_user
+						- @products.each do |product|
+							= render :partial => 'products/product', :locals => { :product => product, :view_only => :false }
+
+							/ .product
+							/ 	%img{:src => "http://placehold.it/350x150"}
+							/ 	.title
+							/ 		%b.pull-right=number_with_precision(product.price, precision: 2)
+							/ 		%b
 								
-								%p.description=product.description
-								.pay-button.text-center
-									= link_to "Purchase", payment_path(product: product), :class => 'btn btn-primary btn-large'
+							/ 	%p.description=product.description
+							/ 	.pay-button.text-center
+							/ 		= link_to "Purchase", payment_path(product: product), :class => 'btn btn-primary btn-large'
+
+/ .hero-unit
+/ 	.container
+/ 		.row
+/ 			.col-md-12.text-center
+/ 				.headline
+/ 					%h3 Revv Tech Challenge
+/ 					%h4 Revv is a donation platform built on top of Stripe Connect.
+/ 					= link_to "Learn More", products_path, :class => 'btn btn-default btn-large'
+/ 					
+/ .about-section
+/ 	.main-image
+/ 		=image_tag("iphone.svg")
+/ 	.container
+/ 		.row
+/ 			.col-md-12
+/ 				.col-md-6
+/ 					%h3 Stuff to say
+				
+/ 				.col-md-6
+/ 					%h3 Stuff to say
+
+/ %h1 Hello, Revv Team!
+/ %p
+/ 	- if current_user
+/ 		/ = link_to "Stripe Connected", "#", :class => 'btn btn-default btn-large btn-disabled'
+/ 	- else
+/ 		/ = link_to "Stripe Connect", user_stripe_connect_omniauth_authorize_path, :class => 'btn btn-primary btn-large stripe-connect'
+/ 	= link_to "Add/Update Products", products_path, :class => 'btn btn-primary btn-large'
+/ %small You must connect your Stripe account before you can purchase any products.
+
+/ .row
+/ 	.col-md-12
+/ 		

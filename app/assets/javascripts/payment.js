@@ -1,4 +1,12 @@
 jQuery(function($) {
+
+  $('.btn-group.amount-selector button').click(function() {
+      $(this).addClass('active').siblings().removeClass('active');
+      var path = $(this).data("path");
+      var button = $(this).parent().parent().parent().find('.pay-button a');
+      button.attr('href', path);
+  });
+
   $('#payment-form').submit(function(event) {
     event.preventDefault();
     var $form = $(this);

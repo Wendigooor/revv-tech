@@ -1,0 +1,20 @@
+.col-md-4
+  .product-img
+    =image_tag("revv-logo.jpg")
+  .description
+    %h4= product.name
+    %p= product.description
+  .amount
+    %label Select amount:
+    %br
+    .btn-group.amount-selector
+      %button{"data-path" => payment_path(product: product, amount: number_with_precision(product.amount_1, precision: 0)), class: "btn btn-default active"}= number_with_precision(product.amount_1, precision: 0)
+      %button{"data-path" => payment_path(product: product, amount: number_with_precision(product.amount_2, precision: 0)), class: "btn btn-default"}= number_with_precision(product.amount_2, precision: 0)
+      %button{"data-path" => payment_path(product: product, amount: number_with_precision(product.amount_3, precision: 0)), class: "btn btn-default"}= number_with_precision(product.amount_3, precision: 0)
+      %button{"data-path" => payment_path(product: product, amount: number_with_precision(product.amount_4, precision: 0)), class: "btn btn-default"}= number_with_precision(product.amount_4, precision: 0)
+  .text-center
+    - if view_only == :false
+      .pay-button
+        = link_to "Donate", payment_path(product: product, amount: number_with_precision(product.amount_1, precision: 0)), :class => 'btn btn-primary btn-large btn-block'
+    - else
+      = link_to "View on Homepage", root_path(anchor: "products"), :class => 'btn btn-primary btn-large btn-block'

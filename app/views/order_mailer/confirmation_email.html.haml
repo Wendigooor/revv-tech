@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1 Hi Guy,
+    %p
+      Thanks for your order. We charged you :).
+    %p
+      You purchased #{@product.name}.
+    %p
+      You can visit your charge at
+      = succeed "." do
+        %a{:href => "https://dashboard.stripe.com/test/payments/#{@charge}", :rel => "\#{params[:charge_on]}-account", :target => "_blank"} View in dashboard

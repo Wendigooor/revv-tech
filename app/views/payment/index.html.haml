@@ -9,24 +9,22 @@
 			%header
 				%h2 Your Order
 				%hr
-			
-			.col-md-2
-				QTY: 1
+
 			.col-md-3
 				%p=@product.name 
-			.col-md-5
+			.col-md-6
 				%p=@product.description
-			.col-md-2
+			.col-md-3
 				.pull-right
-					%p=@product.price
+					%p Amount: #{@amount}
 			.col-md-12
 				.total.pull-right
-					%b Total: $#{@product.price}
+					%b Total: $#{@amount}
 			%hr
 	.row
 		.form-horizontal
 			= form_tag payment_path, :method => :post, id: "payment-form" do
-				= hidden_field_tag :amount, @product.price
+				= hidden_field_tag :amount, @amount
 				= hidden_field_tag :product_id, @product.id
 				.col-md-10.col-md-offset-1
 					%h2 Payment Information
