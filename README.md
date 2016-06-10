@@ -1,7 +1,7 @@
 Revv Tech
 ================
 
-This repository contains the below requirements and my additions for the Revv Technical Challenge. The word product and donate are used synonymously to replicate www.revv.co
+This repository contains the minimum challenge requirements and my bonus additions for the Revv Technical Challenge. The word product and donate are used synonymously to replicate www.revv.co
 
 Requirements and Additions (Bonus)
 ----------------------------------
@@ -19,25 +19,30 @@ Requirements and Additions (Bonus)
 Getting Started
 ---------------
 
-Sign in + Stripe connect: [https://sheltered-oasis-34225.herokuapp.com/users/sign_in](https://sheltered-oasis-34225.herokuapp.com/users/sign_in)
+Sign in + Stripe connect
+
+	[https://damp-reaches-28734.herokuapp.com/users/sign_in](https://damp-reaches-28734.herokuapp.com/users/sign_in)
 
 Stripe Login
+	
 	Email: revvseller@gmail.com
 	Password: revvdonate
 
-Viewing/Modifying products (Must be signed in first): [https://sheltered-oasis-34225.herokuapp.com/products](https://sheltered-oasis-34225.herokuapp.com/products)
+To view all and modify products (Must be signed in first)
+	
+	[https://damp-reaches-28734.herokuapp.com/products](https://damp-reaches-28734.herokuapp.com/products)
 
 Documentation and Support
 -------------------------
 
-Example Product Fields:
+Example Product Fields
+
 	Name: Donation campaign 1
 	Amounts: 10 20 30 40
 	Description: This is a test description for a donation campaign
 
 Issues
 -------------
-- Sometimes the app makes duplicate charges. This most likely happens when I connect a seller on my localhost and on the heroku app. I have not investigated enough to fully verify. Just be aware of duplicate charges.
+Sometimes the app makes duplicate charges. This most likely happens when I connect a seller on my localhost and on the heroku app. I have not investigated enough to fully verify. Just be aware of duplicate charges.
 
 -------
-# revv-tech
