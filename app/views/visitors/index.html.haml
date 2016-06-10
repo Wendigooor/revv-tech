@@ -36,5 +36,5 @@
 					- if current_user
 						- @products.each do |product|
 							= render :partial => 'products/product', :locals => { :product => product, :view_only => :false }
-					- else 
-						%p No products available
+				- if @products.count == 0 
+					%p No products available
