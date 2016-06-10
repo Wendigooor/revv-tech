@@ -28,7 +28,7 @@ Stripe Login
 	Email: revvseller@gmail.com
 	Password: revvdonate
 
-To view all and modify products (Must be signed in first)
+To view all products (You will be redirected if you are not connected to stripe).
 	
 	https://damp-reaches-28734.herokuapp.com/products
 
