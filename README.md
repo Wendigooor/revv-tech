@@ -25,7 +25,10 @@ Sign in + Stripe connect
 
 Stripe Login
 	
-	Email: revvseller@gmail.com
+	Seller Email: revvseller@gmail.com
+	Password: revvdonate
+
+	Platform Email: revv+platform@gmail.com
 	Password: revvdonate
 
 To view all products (You will be redirected if you are not connected to stripe).
