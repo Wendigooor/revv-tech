@@ -1,51 +1,43 @@
 Revv Tech
 ================
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This repository contains the below requirements and my additions for the Revv Technical Challenge. The word product and donate are used synonymously to replicate www.revv.co
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Requirements and Additions (Bonus)
+----------------------------------
+- Add, edit and delete products from the store
+- View all the products that are currently being sold on the store
+- View details about a specific product, and purchase that product
+- When I purchase a product from the store, the store itself (application owner) earns a 10% fee on the price of the product.
+- Following my order, I am shown a thank you page that has details of my purchase.
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.2.3
-- Rails 4.2.1
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+### Bonus
+- Confirmation Email with link to view charge in Stripe Dashboard.
+- Ability to select from 4 different prices per product for donations
+- Custom Stripe Payment form
 
 Getting Started
 ---------------
 
+Sign in + Stripe connect: [https://sheltered-oasis-34225.herokuapp.com/users/sign_in](https://sheltered-oasis-34225.herokuapp.com/users/sign_in)
+
+Stripe Login
+	Email: revvseller@gmail.com
+	Password: revvdonate
+
+Viewing/Modifying products (Must be signed in first): [https://sheltered-oasis-34225.herokuapp.com/products](https://sheltered-oasis-34225.herokuapp.com/products)
+
 Documentation and Support
 -------------------------
 
+Example Product Fields:
+	Name: Donation campaign 1
+	Amounts: 10 20 30 40
+	Description: This is a test description for a donation campaign
+
 Issues
 -------------
+- Sometimes the app makes duplicate charges. This most likely happens when I connect a seller on my localhost and on the heroku app. I have not investigated enough to fully verify. Just be aware of duplicate charges.
 
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
 -------
 # revv-tech
