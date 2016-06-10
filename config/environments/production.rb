@@ -77,13 +77,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'https://stormy-badlands-84608.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'https://damp-reaches-28734.herokuapp.com/' }
   ActionMailer::Base.smtp_settings = {
       :port           => '25', # or 2525
       :address        => ENV['POSTMARK_SMTP_SERVER'],
       :user_name      => ENV['POSTMARK_API_TOKEN'],
       :password       => ENV['POSTMARK_API_TOKEN'],
-      :domain         => 'https://stormy-badlands-84608.herokuapp.com',
+      :domain         => 'https://damp-reaches-28734.herokuapp.com/',
       :authentication => :plain, # or :plain for plain-text authentication
       :enable_starttls_auto => false, # or false for unencrypted connection
     }
