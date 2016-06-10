@@ -216,6 +216,7 @@ Devise.setup do |config|
   # are using only default views.
   # config.scoped_views = false
   config.scoped_views = true
+  config.sign_out_via = :get
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

@@ -2,37 +2,5 @@
   .row
     .col-sm-4.col-sm-offset-4
       .light-well
-        %h2.page-header.text-center
-          Edit #{resource_name.to_s.humanize}
-        = form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, |
-          html: { class: "form-horizontal center"} do |f|                                                      |
-          .form-group
-            = f.email_field :email, autofocus: true, class: "form-control"
-          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-            %div
-              Currently waiting confirmation for: #{resource.unconfirmed_email}
-          .form-group
-            = f.password_field :password, autocomplete: "off", placeholder: "New Password", class: "form-control"
-            %p.help-block
-              %i leave blank if you don't want to change it
-              %br/
-          .form-group
-            = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password", class: "form-control"
-            - if @validatable
-              %p.help-block
-                = @minimum_password_length
-                characters minimum
-          .form-group
-            = f.password_field :current_password, autocomplete: "off", placeholder: "Current Password", class: "form-control"
-            %p.help-block
-              %i we need your current password to confirm your changes
-              %br/
-          .actions
-            = f.submit "Update", class: "btn btn-success btn-lg btn-block"
-          = devise_error_messages!
-      %br/
-      %br/
-      %h3.page-header.text-center Cancel my account
-      %p
-        Unhappy? #{button_to "Delete my account", registration_path(resource_name), class: "btn btn-danger btn-lg btn-block", data: { confirm: "Are you sure?" }, method: :delete}
-      = link_to "Back", :back
+        %h2.page-header.text-center User
+        = link_to('Logout', destroy_user_session_path)
