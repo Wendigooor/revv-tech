@@ -3,4 +3,4 @@
     .col-sm-4.col-sm-offset-4
       .light-well
         %h2.page-header.text-center User
-        = link_to('Logout', destroy_user_session_path)
+        = link_to('Logout', destroy_user_session_path, :method => :delete )
