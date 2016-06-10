@@ -12,7 +12,7 @@ Requirements and Additions (Bonus)
 - Following my order, I am shown a thank you page that has details of my purchase.
 
 ### Bonus
-- Confirmation Email with link to view charge in Stripe Dashboard.
+- Confirmation email with link to view charge in Stripe Dashboard.
 - Ability to select from 4 different prices per product for donations
 - Custom Stripe Payment form
 
@@ -21,7 +21,7 @@ Getting Started
 
 Sign in + Stripe connect
 
-	[https://damp-reaches-28734.herokuapp.com/users/sign_in](https://damp-reaches-28734.herokuapp.com/users/sign_in)
+	https://damp-reaches-28734.herokuapp.com/users/sign_in
 
 Stripe Login
 	
@@ -30,7 +30,7 @@ Stripe Login
 
 To view all and modify products (Must be signed in first)
 	
-	[https://damp-reaches-28734.herokuapp.com/products](https://damp-reaches-28734.herokuapp.com/products)
+	https://damp-reaches-28734.herokuapp.com/products
 
 Documentation and Support
 -------------------------
